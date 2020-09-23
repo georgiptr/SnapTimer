@@ -3,7 +3,7 @@ Steps to release a new version
 * Run all tests in texts.txt (write unit tests?)
 * Update Readme.txt with new version and new features
 * Update version.inc
-* Update EXE version in project
-* Run deploy.bat to copy all the files into the released location
-* Archive previous version's zip file
-* Put new zip file up on web server, update HTML page with version info, date and MD5 sum
+* Update Lazarus -> Project -> Project Options -> Version Info -> Revision & ProductVersion & FileVersion
+* Build it in release mode
+* Run deploy.bat to copy the new version in releases folder
+* Archive the file in release folder, create a new version subfolder, copy them there and make a new commit

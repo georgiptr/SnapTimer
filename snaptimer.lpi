@@ -12,8 +12,8 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <RevisionNr Value="2"/>
-      <StringTable CompanyName="Snapmagic Software" FileDescription="Simple countdown timer" LegalCopyright="Snapmagic Software" ProductVersion="0.2"/>
+      <RevisionNr Value="3"/>
+      <StringTable CompanyName="Snapmagic Software" FileDescription="Simple countdown timer" LegalCopyright="Snapmagic Software" ProductVersion="0.3"/>
     </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="development" Default="True"/>

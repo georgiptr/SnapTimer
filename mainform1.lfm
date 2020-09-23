@@ -2,7 +2,7 @@ object MainForm: TMainForm
   Left = 533
   Height = 363
   Top = 312
-  Width = 392
+  Width = 453
   HorzScrollBar.Page = 274
   HorzScrollBar.Range = 275
   HorzScrollBar.Visible = False
@@ -12,7 +12,7 @@ object MainForm: TMainForm
   ActiveControl = Minutes
   Caption = 'SnapTimer'
   ClientHeight = 333
-  ClientWidth = 392
+  ClientWidth = 453
   Constraints.MinHeight = 105
   Constraints.MinWidth = 240
   DesignTimePPI = 144
@@ -110,7 +110,7 @@ object MainForm: TMainForm
     ShowHint = True
   end
   object ImgReset: TImage
-    Left = 208
+    Left = 206
     Height = 38
     Hint = 'Reset'
     Top = 3
@@ -453,7 +453,7 @@ object MainForm: TMainForm
     Left = 3
     Height = 301
     Top = 32
-    Width = 386
+    Width = 447
     Align = alBottom
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
