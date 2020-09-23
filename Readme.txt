@@ -1,7 +1,10 @@
-SnapTimer 0.1
+SnapTimer 0.3
 A SnapMagic Software product
 Written by Dan Hersam
+Improved by Georgi Petrov (georgiptr)
 License: Freeware
+
+Compiled binaries: https://github.com/georgiptr/SnapTimer/tree/master/releases
 
 Description and features
 SnapTimer is a simple, free, portable countdown timer for Windows.
@@ -69,6 +72,10 @@ Wav files from
 Icons from http://www.fatcow.com/free-icons/
 
 Release history
+0.3 (Georgi Petrov's version) - 9/2020
+Added "Hide seconds" option to hide seconds and show hours:minutes only
+Fixed a play/pause bug (was present only in the latest unreleased codebase)
+
 0.2 - 
 Fixed relative paths when started from another directory
 Startup position dropdown is now read only
