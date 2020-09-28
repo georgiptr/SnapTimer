@@ -8,7 +8,6 @@
       <Unit0>
         <Filename Value="snaptimer.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
@@ -20,6 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MainForm1"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="492"/>
         <CursorPos X="20" Y="522"/>
         <UsageCount Value="22"/>
