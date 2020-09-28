@@ -1,4 +1,4 @@
-SnapTimer 0.3
+SnapTimer 0.4
 A SnapMagic Software product
 Written by Dan Hersam
 Improved by Georgi Petrov (georgiptr)
@@ -72,6 +72,9 @@ Wav files from
 Icons from http://www.fatcow.com/free-icons/
 
 Release history
+0.4 (Georgi Petrov's version) - 9/2020
+Fixed an overlapping view
+
 0.3 (Georgi Petrov's version) - 9/2020
 Added "Hide seconds" option to hide seconds and show hours:minutes only
 Fixed a play/pause bug (was present only in the latest unreleased codebase)
@@ -81,7 +84,6 @@ Fixed relative paths when started from another directory
 Startup position dropdown is now read only
 Looping audio is stopped when the message dialog is closed.
 Set default tray popup menu to start/stop
-
 
 0.1 - 8/2010
 Initial release
