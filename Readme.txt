@@ -4,7 +4,7 @@ Written by Dan Hersam
 Improved by Georgi Petrov (georgiptr)
 License: Freeware
 
-Compiled binaries: https://github.com/georgiptr/SnapTimer/tree/master/releases
+Compiled binaries: https://github.com/georgiptr/SnapTimer/releases
 
 Description and features
 SnapTimer is a simple, free, portable countdown timer for Windows.
