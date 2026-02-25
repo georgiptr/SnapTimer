@@ -1,4 +1,4 @@
-SnapTimer 0.4
+SnapTimer 0.5
 A SnapMagic Software product
 Written by Dan Hersam
 Improved by Georgi Petrov (georgiptr)
@@ -72,6 +72,10 @@ Wav files from
 Icons from http://www.fatcow.com/free-icons/
 
 Release history
+0.5 (Georgi Petrov's version) - 2/2026
+The app is DPI aware now
+Fixed layout on higher DPI screens
+
 0.4 (Georgi Petrov's version) - 9/2020
 Fixed an overlapping view
 
