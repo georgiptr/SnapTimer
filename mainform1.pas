@@ -9,6 +9,9 @@ uses
   Menus, StdCtrls, Spin, ExtCtrls, About, LCLType, IniFiles, Settings, MMSystem,
   Windows, StrUtils, DateUtils;
 
+const
+  WM_DPICHANGED = $02E0;
+
 type
   TMode = (Timer, Stopwatch);
   TPosition = (Center, Remember, TopLeft, TopRight, BottomLeft, BottomRight);
@@ -51,6 +54,7 @@ type
     Timer1:  TTimer;
     TrayIconMain: TTrayIcon;
     procedure FormActivate(Sender: TObject);
+    procedure TimeLabelClick(Sender: TObject);
     procedure ToggleCompact(Sender: TObject);
     procedure MinutesChanged(Sender: TObject);
     procedure OnDestroyForm(Sender: TObject);
@@ -81,6 +85,7 @@ type
     function FontStylesToInt(Fnt: TFont): integer;
     function IntToFontStyles(Mask: integer): TFontStyles;
     procedure SetFieldsVisible(showFields: boolean);
+    procedure UpdateToggleButtonGlyph(isRunning: boolean);
     procedure UpdateAlwaysOnTop(onTop: boolean);
     procedure PlayTicking();
     function IsInteger(S: String): boolean;
@@ -123,8 +128,12 @@ type
     EndTime: TDateTime;
     StartTime: TDateTime;
     CountdownDone: boolean;
+    StartButtonPicture: TPicture;
+    PauseButtonPicture: TPicture;
+    SavedDpi: Integer;
   public
     { public declarations }
+    procedure WMDpiChanged(var Message: TMessage); message WM_DPICHANGED;
   end;
 
 var
@@ -158,6 +167,7 @@ const
   INI_LEFT     = 'WinLeft';
   INI_TOP      = 'WinTop';
   INI_POSITION = 'WinPosition';
+  INI_SAVED_DPI = 'SavedDPI';
   INI_DONE_MESSAGE = 'Message';
   INI_DONE_MESSAGE_ON = 'MessageEnabled';
   INI_DONE_TRAY_MESSAGE = 'TrayMessage';
@@ -231,6 +241,12 @@ const
 
 procedure TMainForm.OnCreateForm(Sender: TObject);
 begin
+  StartButtonPicture := TPicture.Create;
+  PauseButtonPicture := TPicture.Create;
+  StartButtonPicture.Assign(ImgStart.Picture);
+  PauseButtonPicture.Assign(ImgPause.Picture);
+  ImgPause.Hide;
+
   MenuFile.Caption    := MENU_FILE;
   MenuToggle.Caption  := BTN_START;
   MenuReset.Caption   := BTN_RESET;
@@ -328,11 +344,16 @@ begin
       DEF_DONE_AUDIO_ON);
     DoneApp := IniFile.ReadString(INI_SEC_ALARMS, INI_DONE_APP, DEF_DONE_APP);
     DoneAppEnabled := IniFile.ReadBool(INI_SEC_ALARMS, INI_DONE_APP_ON, DEF_DONE_APP_ON);
-    WndHeight := IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_HEIGHT, DEF_HEIGHT);
-    WndWidth := IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_WIDTH, DEF_WIDTH);
+    SavedDpi := IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_SAVED_DPI, 96);
+    WndHeight := MulDiv(IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_HEIGHT, DEF_HEIGHT),
+      Screen.PixelsPerInch, SavedDpi);
+    WndWidth := MulDiv(IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_WIDTH, DEF_WIDTH),
+      Screen.PixelsPerInch, SavedDpi);
     WndPosition := TPosition(IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_POSITION, DEF_POSITION));
-    WndLeft := IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_LEFT, 0);
-    WndTop := IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_TOP, 0);
+    WndLeft := MulDiv(IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_LEFT, 0),
+      Screen.PixelsPerInch, SavedDpi);
+    WndTop := MulDiv(IniFile.ReadInteger(INI_SEC_PLACEMENT, INI_TOP, 0),
+      Screen.PixelsPerInch, SavedDpi);
 
     Count.Font.Quality := fqAntialiased;
     Count.Font.Name := IniFile.ReadString(INI_SEC_FONTS, INI_FONT_NAME,
@@ -692,6 +713,7 @@ begin
     IniFile.WriteInteger(INI_SEC_PLACEMENT, INI_LEFT, wRect.Left);
     IniFile.WriteInteger(INI_SEC_PLACEMENT, INI_TOP, wRect.Top);
     IniFile.WriteInteger(INI_SEC_PLACEMENT, INI_POSITION, Ord(WndPosition));
+    IniFile.WriteInteger(INI_SEC_PLACEMENT, INI_SAVED_DPI, Screen.PixelsPerInch);
 
     IniFile.WriteString(INI_SEC_ALARMS, INI_DONE_MESSAGE, DoneMessage);
     IniFile.WriteBool(INI_SEC_ALARMS, INI_DONE_MESSAGE_ON, DoneMessageEnabled);
@@ -929,6 +951,28 @@ begin
   Show;
 end;
 
+procedure TMainForm.TimeLabelClick(Sender: TObject);
+begin
+  ToggleCountdown(nil);
+end;
+
+procedure TMainForm.UpdateToggleButtonGlyph(isRunning: boolean);
+begin
+  if isRunning then
+  begin
+    ImgStart.Picture.Assign(PauseButtonPicture);
+  end
+  else
+  begin
+    ImgStart.Picture.Assign(StartButtonPicture);
+  end;
+end;
+
+procedure TMainForm.WMDpiChanged(var Message: TMessage);
+begin
+  SavedDpi := Screen.PixelsPerInch;
+end;
+
 function TMainForm.IsInteger(S: String): boolean;
 begin
   try
@@ -958,4 +1002,3 @@ end;
 initialization
   {$I mainform1.lrs}
 end.
-
