@@ -1,25 +1,25 @@
 object OptionsForm: TOptionsForm
   Left = 465
-  Height = 351
+  Height = 553
   Top = 319
-  Width = 825
+  Width = 1307
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 351
-  ClientWidth = 825
-  DesignTimePPI = 144
+  ClientHeight = 553
+  ClientWidth = 1307
+  DesignTimePPI = 216
   KeyPreview = True
-  OnCreate = EnableFields
-  OnKeyPress = FormKeyPress
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '4.4.0.0'
+  OnCreate = EnableFields
+  OnKeyPress = FormKeyPress
   object BtnOk: TButton
-    Left = 576
-    Height = 38
-    Top = 300
-    Width = 112
+    Left = 920
+    Height = 57
+    Top = 480
+    Width = 168
     Caption = '&OK'
     Default = True
     ModalResult = 1
@@ -27,10 +27,10 @@ object OptionsForm: TOptionsForm
     TabOrder = 1
   end
   object BtnCancel: TButton
-    Left = 696
-    Height = 38
-    Top = 300
-    Width = 112
+    Left = 1112
+    Height = 57
+    Top = 480
+    Width = 168
     Caption = '&Cancel'
     ModalResult = 2
     ParentFont = False
@@ -38,24 +38,24 @@ object OptionsForm: TOptionsForm
   end
   object PageControl1: TPageControl
     Left = 0
-    Height = 288
+    Height = 448
     Top = 0
-    Width = 828
+    Width = 1284
     ActivePage = GeneralTab
     ParentFont = False
     TabIndex = 0
     TabOrder = 0
     object GeneralTab: TTabSheet
       Caption = 'General'
-      ClientHeight = 250
-      ClientWidth = 820
+      ClientHeight = 379
+      ClientWidth = 1264
       ParentFont = False
       object CheckAutostart: TCheckBox
-        Left = 256
-        Height = 29
+        Left = 384
+        Height = 41
         Hint = 'Begin counting down when the application starts'
-        Top = 111
-        Width = 150
+        Top = 166
+        Width = 212
         Caption = '&Autostart timer'
         ParentFont = False
         ParentShowHint = False
@@ -63,11 +63,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 4
       end
       object CheckMinToTray: TCheckBox
-        Left = 18
-        Height = 29
+        Left = 27
+        Height = 41
         Hint = 'Don''t show the application in the taskbar when minimized'
-        Top = 159
-        Width = 158
+        Top = 238
+        Width = 227
         Caption = '&Minimize to tray'
         ParentFont = False
         ParentShowHint = False
@@ -75,23 +75,23 @@ object OptionsForm: TOptionsForm
         TabOrder = 2
       end
       object GroupBox2: TGroupBox
-        Left = 6
-        Height = 72
-        Top = 19
-        Width = 240
+        Left = 9
+        Height = 108
+        Top = 28
+        Width = 360
         Caption = 'Starting position'
-        ClientHeight = 42
-        ClientWidth = 236
+        ClientHeight = 66
+        ClientWidth = 356
         ParentFont = False
         TabOrder = 0
         object PositionCombo: TComboBox
-          Left = 9
-          Height = 33
+          Left = 14
+          Height = 45
           Hint = 'Where to place the application window when it starts'
-          Top = 3
-          Width = 216
+          Top = 4
+          Width = 324
           DropDownCount = 6
-          ItemHeight = 25
+          ItemHeight = 37
           ParentFont = False
           ParentShowHint = False
           ShowHint = True
@@ -100,11 +100,11 @@ object OptionsForm: TOptionsForm
         end
       end
       object CheckClickTime: TCheckBox
-        Left = 256
-        Height = 29
+        Left = 384
+        Height = 41
         Hint = 'Click the timer numerals to start/pause the timer'
-        Top = 159
-        Width = 168
+        Top = 238
+        Width = 241
         Caption = 'Cl&ick time to start'
         ParentFont = False
         ParentShowHint = False
@@ -112,11 +112,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 5
       end
       object CheckDblClickTime: TCheckBox
-        Left = 256
-        Height = 29
+        Left = 384
+        Height = 41
         Hint = 'Double-click the timer numerals to reset the timer'
-        Top = 207
-        Width = 233
+        Top = 310
+        Width = 339
         Caption = '&Double-click time to reset'
         ParentFont = False
         ParentShowHint = False
@@ -124,11 +124,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 6
       end
       object CheckAutoRestart: TCheckBox
-        Left = 522
-        Height = 29
+        Left = 783
+        Height = 41
         Hint = 'Start the timer again when the time reaches zero'
-        Top = 111
-        Width = 239
+        Top = 166
+        Width = 348
         Caption = 'Automatically &restart timer'
         ParentFont = False
         ParentShowHint = False
@@ -136,11 +136,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 8
       end
       object CheckLoopAudio: TCheckBox
-        Left = 522
-        Height = 29
+        Left = 783
+        Height = 41
         Hint = 'Continue playing the audio file until timer is reset'
-        Top = 159
-        Width = 170
+        Top = 238
+        Width = 244
         Caption = '&Loop audio alarm'
         ParentFont = False
         ParentShowHint = False
@@ -148,11 +148,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 9
       end
       object CheckAutoSave: TCheckBox
-        Left = 18
-        Height = 29
+        Left = 27
+        Height = 41
         Hint = 'Automatically save settings to the .ini file on exit'
-        Top = 207
-        Width = 171
+        Top = 310
+        Width = 242
         Caption = 'Auto&save settings'
         ParentFont = False
         ParentShowHint = False
@@ -160,11 +160,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 3
       end
       object CheckAlwaysOnTop: TCheckBox
-        Left = 18
-        Height = 29
+        Left = 27
+        Height = 41
         Hint = 'Show the window even when it''s deactivated'
-        Top = 111
-        Width = 144
+        Top = 166
+        Width = 202
         Caption = 'Al&ways on top'
         ParentFont = False
         ParentShowHint = False
@@ -172,11 +172,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 1
       end
       object CheckTicking: TCheckBox
-        Left = 522
-        Height = 29
+        Left = 783
+        Height = 41
         Hint = 'Play a ticking sound when timer is running'
-        Top = 204
-        Width = 174
+        Top = 306
+        Width = 249
         Caption = '&Play ticking sound'
         ParentFont = False
         ParentShowHint = False
@@ -184,11 +184,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 10
       end
       object CheckSecondsMode: TCheckBox
-        Left = 522
-        Height = 29
+        Left = 783
+        Height = 41
         Hint = 'Enter seconds instead of minutes'
-        Top = 62
-        Width = 204
+        Top = 93
+        Width = 292
         Caption = '&Enable seconds mode'
         ParentFont = False
         ParentShowHint = False
@@ -196,11 +196,11 @@ object OptionsForm: TOptionsForm
         TabOrder = 7
       end
       object CheckHideSeconds: TCheckBox
-        Left = 256
-        Height = 29
+        Left = 384
+        Height = 41
         Hint = 'Begin counting down when the application starts'
-        Top = 62
-        Width = 137
+        Top = 93
+        Width = 192
         Caption = '&Hide seconds'
         ParentFont = False
         ParentShowHint = False
@@ -210,148 +210,148 @@ object OptionsForm: TOptionsForm
     end
     object AlarmsTab: TTabSheet
       Caption = 'Alarms'
-      ClientHeight = 166
-      ClientWidth = 544
+      ClientHeight = 379
+      ClientWidth = 1264
       ParentFont = False
       object GroupBox1: TGroupBox
-        Left = 6
-        Height = 216
-        Top = 15
-        Width = 801
+        Left = 9
+        Height = 324
+        Top = 22
+        Width = 1202
         Caption = 'Notification actions'
-        ClientHeight = 186
-        ClientWidth = 797
+        ClientHeight = 282
+        ClientWidth = 1198
         ParentFont = False
         TabOrder = 0
         object NotifyRunAppOn: TCheckBox
-          Left = 8
-          Height = 17
-          Top = 138
-          Width = 84
+          Left = 12
+          Height = 41
+          Top = 207
+          Width = 196
           Caption = '&Run program:'
-          OnClick = EnableFields
           ParentFont = False
           TabOrder = 10
+          OnClick = EnableFields
         end
         object NotifyAudioOn: TCheckBox
-          Left = 8
-          Height = 17
-          Top = 94
-          Width = 88
+          Left = 12
+          Height = 41
+          Top = 141
+          Width = 200
           Caption = '&Play wave file:'
-          OnClick = EnableFields
           ParentFont = False
           TabOrder = 6
+          OnClick = EnableFields
         end
         object NotifyTrayMsgOn: TCheckBox
-          Left = 8
-          Height = 17
-          Top = 48
-          Width = 104
+          Left = 12
+          Height = 41
+          Top = 72
+          Width = 243
           Caption = '&Show tray popup:'
-          OnClick = EnableFields
           ParentFont = False
           TabOrder = 3
+          OnClick = EnableFields
         end
         object NotifyMsgOn: TCheckBox
-          Left = 8
-          Height = 17
-          Top = 4
-          Width = 101
+          Left = 12
+          Height = 41
+          Top = 6
+          Width = 237
           Caption = '&Display message:'
-          OnClick = EnableFields
           ParentFont = False
           TabOrder = 0
+          OnClick = EnableFields
         end
         object NotifyTrayMsgTest: TButton
-          Left = 678
-          Height = 38
-          Top = 45
-          Width = 112
+          Left = 1017
+          Height = 57
+          Top = 68
+          Width = 168
           Caption = 'Test'
-          OnClick = TestTrayMsg
           ParentFont = False
           TabOrder = 5
+          OnClick = TestTrayMsg
         end
         object NotifyMsgTest: TButton
-          Left = 678
-          Height = 38
-          Top = 2
-          Width = 112
+          Left = 1017
+          Height = 57
+          Top = 3
+          Width = 168
           Caption = 'Test'
-          OnClick = TestMessage
           ParentFont = False
           TabOrder = 2
+          OnClick = TestMessage
         end
         object NotifyRunTest: TButton
-          Left = 678
-          Height = 38
-          Top = 135
-          Width = 112
+          Left = 1017
+          Height = 57
+          Top = 202
+          Width = 168
           Caption = 'Test'
-          OnClick = TestRunApp
           ParentFont = False
           TabOrder = 13
+          OnClick = TestRunApp
         end
         object NotifyAudioTest: TButton
-          Left = 678
-          Height = 38
-          Top = 92
-          Width = 112
+          Left = 1017
+          Height = 57
+          Top = 138
+          Width = 168
           Caption = 'Test'
-          OnClick = TestAudio
           ParentFont = False
           TabOrder = 9
+          OnClick = TestAudio
         end
         object NotifyTrayMsg: TEdit
-          Left = 195
-          Height = 21
-          Top = 48
-          Width = 472
+          Left = 292
+          Height = 45
+          Top = 72
+          Width = 708
           ParentFont = False
           TabOrder = 4
         end
         object NotifyRunBtn: TButton
-          Left = 558
-          Height = 38
-          Top = 135
-          Width = 112
+          Left = 837
+          Height = 57
+          Top = 202
+          Width = 168
           Caption = 'Browse'
-          OnClick = GetAppFile
           ParentFont = False
           TabOrder = 12
+          OnClick = GetAppFile
         end
         object NotifyRunApp: TEdit
-          Left = 195
-          Height = 21
-          Top = 138
-          Width = 348
+          Left = 292
+          Height = 45
+          Top = 207
+          Width = 522
           ParentFont = False
           TabOrder = 11
         end
         object NotifyAudioBtn: TButton
-          Left = 558
-          Height = 38
-          Top = 92
-          Width = 112
+          Left = 837
+          Height = 57
+          Top = 138
+          Width = 168
           Caption = 'Browse'
-          OnClick = GetAudioFile
           ParentFont = False
           TabOrder = 8
+          OnClick = GetAudioFile
         end
         object NotifyAudio: TEdit
-          Left = 195
-          Height = 21
-          Top = 94
-          Width = 348
+          Left = 292
+          Height = 45
+          Top = 141
+          Width = 522
           ParentFont = False
           TabOrder = 7
         end
         object NotifyMsg: TEdit
-          Left = 195
-          Height = 21
-          Top = 4
-          Width = 472
+          Left = 292
+          Height = 45
+          Top = 6
+          Width = 708
           ParentFont = False
           TabOrder = 1
         end
@@ -359,117 +359,117 @@ object OptionsForm: TOptionsForm
     end
     object FontsTab: TTabSheet
       Caption = 'Font'
-      ClientHeight = 250
-      ClientWidth = 820
-      OnShow = UpdateFonts
+      ClientHeight = 379
+      ClientWidth = 1264
       ParentFont = False
+      OnShow = UpdateFonts
       object TimerFontBox: TGroupBox
-        Left = 6
-        Height = 156
-        Top = 15
-        Width = 801
+        Left = 9
+        Height = 234
+        Top = 22
+        Width = 1202
         Caption = 'Timer font'
-        ClientHeight = 126
-        ClientWidth = 797
+        ClientHeight = 192
+        ClientWidth = 1198
         ParentFont = False
         TabOrder = 0
         object Label1: TLabel
-          Left = 9
-          Height = 25
-          Top = 9
-          Width = 35
+          Left = 14
+          Height = 37
+          Top = 14
+          Width = 53
           Caption = 'Size:'
           ParentColor = False
           ParentFont = False
         end
         object FontColor: TColorButton
-          Left = 252
-          Height = 38
-          Top = 2
-          Width = 112
-          BorderWidth = 2
-          ButtonColorSize = 16
+          Left = 378
+          Height = 57
+          Top = 3
+          Width = 168
+          BorderWidth = 3
+          ButtonColorSize = 24
           ButtonColor = clBlack
           OnColorChanged = UpdateFontColor
           ParentFont = False
         end
         object BgColor: TColorButton
-          Left = 543
-          Height = 38
-          Top = 2
-          Width = 112
-          BorderWidth = 2
-          ButtonColorSize = 16
+          Left = 814
+          Height = 57
+          Top = 3
+          Width = 168
+          BorderWidth = 3
+          ButtonColorSize = 24
           ButtonColor = clSilver
           OnColorChanged = UpdateFonts
           ParentFont = False
         end
         object LabelTextColor: TLabel
-          Left = 189
-          Height = 25
-          Top = 9
-          Width = 47
+          Left = 284
+          Height = 37
+          Top = 14
+          Width = 71
           Caption = 'Color:'
           ParentColor = False
           ParentFont = False
         end
         object LabelTextColor1: TLabel
-          Left = 429
-          Height = 25
-          Top = 9
-          Width = 99
+          Left = 644
+          Height = 37
+          Top = 14
+          Width = 147
           Caption = 'Background:'
           ParentColor = False
           ParentFont = False
         end
         object FontSize: TSpinEdit
-          Left = 69
-          Height = 33
-          Top = 4
-          Width = 70
+          Left = 104
+          Height = 45
+          Top = 6
+          Width = 105
           MaxValue = 1000
-          OnChange = UpdateFontSize
           ParentFont = False
           TabOrder = 0
+          OnChange = UpdateFontSize
         end
         object FontName: TStaticText
-          Left = 141
-          Height = 41
-          Top = 70
-          Width = 96
+          Left = 212
+          Height = 61
+          Top = 105
+          Width = 142
           Alignment = taCenter
           AutoSize = True
-          BorderSpacing.InnerBorder = 4
+          BorderSpacing.InnerBorder = 6
           Caption = '00:00:00'
           Color = clCaptionText
-          Font.Height = -24
+          Font.Height = -36
           ParentFont = False
           ParentColor = False
           TabOrder = 2
         end
         object FontNameBtn: TButton
-          Left = 8
-          Height = 38
-          Top = 72
-          Width = 112
+          Left = 12
+          Height = 57
+          Top = 108
+          Width = 168
           Caption = '&Font...'
-          OnClick = ChooseFont
           ParentFont = False
           TabOrder = 1
+          OnClick = ChooseFont
         end
       end
       object BtnDefaults: TButton
-        Left = 15
-        Height = 38
+        Left = 22
+        Height = 57
         Hint = 'Reset font to default settings'
-        Top = 201
-        Width = 112
+        Top = 302
+        Width = 168
         Caption = '&Defaults'
-        OnClick = SetDefaults
         ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
+        OnClick = SetDefaults
       end
     end
   end
